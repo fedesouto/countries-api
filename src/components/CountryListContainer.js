@@ -25,7 +25,7 @@ const CountryListContainer = () => {
   }, [search]);
 
   return (
-    <>
+    <div className="main">
       <div className="sub-header">
         <SearchBar search={search} setSearch={setSearch} />
         <Filter />
@@ -35,7 +35,7 @@ const CountryListContainer = () => {
       ) : (
         <SearchError search={search} />
       )}
-    </>
+    </div>
   );
 };
 
