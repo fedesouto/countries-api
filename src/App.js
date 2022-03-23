@@ -1,12 +1,12 @@
 import React from "react";
-import CountryList from "./components/CountryList";
+import CountryListContainer from "./components/CountryListContainer";
 import Header from "./components/Header";
 
 const App = () => {
   return (
     <div>
       <Header />
-      <CountryList />
+      <CountryListContainer />
     </div>
   );
 };

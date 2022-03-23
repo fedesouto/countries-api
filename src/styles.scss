@@ -4,6 +4,7 @@ $dark-blue: hsl(209,23%,22%);
 $very-dark-blue: hsl(207,26%,17%);
 $super-dark-blue: hsl(200,15%,8%);
 $dark-gray: hsl(0,0%,52%);
+$gray: hsl(0, 0%, 75%);
 $very-light-gray: hsl(0,0%,98%);
 $white: hsl(0,0%,100%);
 
@@ -27,21 +28,23 @@ header {
     padding: 1.5em 4em;
     width: 100%;
     background-color: $white;
-    box-shadow: 0 0 5px $dark-gray;
+    box-shadow: 0 0 5px $gray;
 }
 
 .card {
-    width: 18rem;
-    box-shadow: 0 0 5px $dark-gray;
+    width: 16em;
+    box-shadow: 0 0 5px $gray;
     font-size: 16px;
-    height: 400px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 2em;
     margin-bottom: 2em;
+    border-radius: 0.2em;
     img {
         width: 100%;
-        height: auto;
+        max-height: 50%;
     }
     div {
         padding: 2em;
@@ -58,7 +61,29 @@ header {
 .country-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2em;
+}
+.search-error {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    input {
+        padding: 0.8em;
+        width: 30em;
+        border: none;
+        border-radius: 0.2em;
+        box-shadow: 0 0 5px $gray;
+    }
+}
+.sub-header {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1.5em 4em;
+    margin: 2em 6.5em;
 }
