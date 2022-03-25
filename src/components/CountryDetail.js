@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const CountryDetail = () => {
 
@@ -36,7 +36,14 @@ const CountryDetail = () => {
                     </ul>
                 </div>
                 <div>
-                    <b>Border Countries:</b>
+                    <b>Border Countries: </b>
+                        {borders.map( (border) => {
+                            return(
+                                <button><Link to={'/country/'+border}>{border}</Link></button>
+                            )
+                        }
+                        )}
+                    
                 </div>
             </div>
         </div>

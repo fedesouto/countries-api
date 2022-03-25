@@ -132,10 +132,15 @@ a {
 }
 .country-container {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-around;
+    
+    margin: 5%;
     img{
         max-width: 40%;
         height: auto;
+    }
+    .country-detail {
+        width: 50%;
+        margin: 2rem;
     }
 }
