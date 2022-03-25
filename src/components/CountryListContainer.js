@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import CountryList from "./CountryList";
 import Filter from "./Filter";
 import SearchBar from "./SearchBar";
@@ -8,9 +9,15 @@ const CountryListContainer = () => {
   const [countries, setCountries] = useState([]);
   const [search, setSearch] = useState();
 
+  const { continentId } = useParams();
+
   const getCountries = () => {
     if (search) {
       fetch("https://restcountries.com/v2/name/" + search)
+        .then((res) => (res.status === 404 ? setCountries(null) : res.json()))
+        .then((json) => setCountries(json));
+    } else if (continentId) {
+      fetch("https://restcountries.com/v2/region/" + continentId)
         .then((res) => (res.status === 404 ? setCountries(null) : res.json()))
         .then((json) => setCountries(json));
     } else {
@@ -22,7 +29,7 @@ const CountryListContainer = () => {
 
   useEffect(() => {
     getCountries();
-  }, [search]);
+  }, [search, continentId]);
 
   return (
     <div className="main">

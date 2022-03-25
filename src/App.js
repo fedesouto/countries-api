@@ -1,17 +1,17 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CountryListContainer from "./components/CountryListContainer";
 import Header from "./components/Header";
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <BrowserRouter>
-        <Route exact path="/" element={<CountryListContainer />}/>
-        <Route exact path="/:region" element={<CountryListContainer />}/>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<CountryListContainer />} />
+          <Route exact path="/continent/:continentId" element={<CountryListContainer />} />
+        </Routes>
+    </BrowserRouter>
   );
 };
 

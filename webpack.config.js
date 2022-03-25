@@ -5,6 +5,7 @@ module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
   },
   mode: "development",
   module: {
@@ -18,7 +19,6 @@ module.exports = {
             presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
-        
       },
       {
         test: /\.s[ac]ss$/i,
@@ -27,9 +27,13 @@ module.exports = {
       {
         test: /\.(jpg|png)$/,
         use: {
-          loader: 'url-loader'
-      }}
+          loader: "url-loader",
+        },
+      },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
