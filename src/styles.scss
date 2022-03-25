@@ -33,7 +33,10 @@ header {
     background-color: $white;
     box-shadow: 0 0 5px $gray;
 }
-
+a {
+    text-decoration: none;
+    color: $very-dark-blue;
+}
 .card {
     width: 16em;
     box-shadow: 0 0 5px $gray;
@@ -125,5 +128,14 @@ header {
     }
     .show {
         display: inline;
+    }
+}
+.country-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    img{
+        max-width: 40%;
+        height: auto;
     }
 }
