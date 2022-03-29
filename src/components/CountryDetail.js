@@ -39,7 +39,7 @@ const CountryDetail = () => {
                     <b>Border Countries: </b>
                         {borders.map( (border) => {
                             return(
-                                <button><Link to={'/country/'+border}>{border}</Link></button>
+                                <Link to={'/country/'+border}><button>{border}</button></Link>
                             )
                         }
                         )}
