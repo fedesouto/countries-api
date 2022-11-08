@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {BsSearch} from 'react-icons/bs'
 
 const SearchBar = ({search, setSearch}) => {
     
@@ -9,6 +10,7 @@ const SearchBar = ({search, setSearch}) => {
 
     return(
         <div className='search-bar'>
+            <BsSearch />
             <input placeholder='Search for a country...' onChange={handleChange}/>
         </div>
     )
